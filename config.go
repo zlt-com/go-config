@@ -73,11 +73,12 @@ var (
 	Config *Configuration
 )
 
-func init() {
+func Load() {
 	//读取配置文件
+	fmt.Println("...读取配置文件...")
 	file, err := os.Open("config.json")
 	if err != nil {
-		fmt.Println("读取配置文件错误：" + err.Error())
+		fmt.Println("...读取配置文件错误：" + err.Error())
 	}
 
 	defer file.Close()
@@ -86,5 +87,4 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	// fmt.Println(Config, file)
 }

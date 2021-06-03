@@ -73,7 +73,7 @@ var (
 	Config *Configuration
 )
 
-func Load() {
+func init() {
 	//读取配置文件
 	fmt.Println("...读取配置文件...")
 	file, err := os.Open("config.json")
